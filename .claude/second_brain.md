@@ -44,4 +44,4 @@ The upstream Git repository contains release metadata and question-bank data, no
 
 | Change | Base | Status |
 | --- | --- | --- |
-| Linux v1.4.5.1, Console token script, lesson prefetch, two-column layout | `main` (upstream has no `dev`) | PR pending |
+| [#2 Linux v1.4.5.1, Console token script, lesson prefetch, two-column layout](https://github.com/cecon123/lbuns/pull/2) | `main` (upstream has no `dev`) | Open |
