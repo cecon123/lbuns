@@ -1,0 +1,66 @@
+/* Two full-height columns on desktop; the original single column remains on narrow screens. */
+@media (min-width: 1000px) {
+  .work-area {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .lesson-section,
+  .monitor {
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+  }
+
+  #lessonBrowser,
+  :root[style*='--lesson-browser-height'] #lessonBrowser {
+    height: auto;
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  .lesson-list,
+  :root[style*='--lesson-browser-height'] .lesson-list {
+    max-height: none;
+  }
+
+  #lessonBrowser > .resize-handle {
+    display: none;
+  }
+}
+
+.lesson-upcoming {
+  color: var(--muted);
+  cursor: default;
+}
+
+.lesson-upcoming input:disabled {
+  cursor: not-allowed;
+}
+
+.lesson-locked-badge {
+  margin-left: auto;
+  color: var(--amber);
+  white-space: nowrap;
+}
+
+.lesson-upcoming .lesson-pending {
+  color: var(--amber);
+}
+
+.reauth-label {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.reauth-token {
+  width: 100%;
+  padding: 9px 12px;
+}
+
+#reauthError {
+  margin-top: 10px;
+}
