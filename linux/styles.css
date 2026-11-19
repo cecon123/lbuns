@@ -29,3 +29,38 @@
     display: none;
   }
 }
+
+.lesson-upcoming {
+  color: var(--muted);
+  cursor: default;
+}
+
+.lesson-upcoming input:disabled {
+  cursor: not-allowed;
+}
+
+.lesson-locked-badge {
+  margin-left: auto;
+  color: var(--amber);
+  white-space: nowrap;
+}
+
+.lesson-upcoming .lesson-pending {
+  color: var(--amber);
+}
+
+.reauth-label {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.reauth-token {
+  width: 100%;
+  padding: 9px 12px;
+}
+
+#reauthError {
+  margin-top: 10px;
+}

@@ -3,7 +3,7 @@ set -euo pipefail
 
 repo_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cache_dir="$repo_dir/linux/.cache"
-output_dir="${1:-$repo_dir/linux/dist/LBUNS-v1.4.5-linux.1}"
+output_dir="${1:-$repo_dir/linux/dist/LBUNS-v1.4.5-linux.2}"
 
 if [[ -e "$output_dir" ]]; then
   echo "Output already exists: $output_dir" >&2
@@ -56,6 +56,7 @@ cp "$repo_dir/linux/run.sh" "$output_dir/run.sh"
 chmod +x "$output_dir/run.sh" "$output_dir/bin/bun" "$output_dir/bin/launcher"
 node "$repo_dir/linux/patch.mjs" "$output_dir"
 node --check "$output_dir/Resources/app/bun/index.js"
+node --check "$output_dir/Resources/app/views/main/main.js"
 node --check "$repo_dir/docs/token-console.js"
-node --test "$repo_dir/tests/token-console.test.mjs"
+LBUNS_APP_DIR="$output_dir" node --test "$repo_dir/tests/"*.test.mjs
 echo "Built $output_dir"
